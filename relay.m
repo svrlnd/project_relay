@@ -8,8 +8,8 @@ p13 = 0.25;
 p20 = 0.9;
 p23 = 0.25;
 p03 = 0.9;
-lambda1 = 0;
-lambda2 = 0;
+lambda1 = linspace(0,1,11); %Gör så vi kan plotta grejer mot olika lambdavärden
+lambda2 = linspace(0,1,11); %
 lambda0 = 0;
 slots = 100000;
 
@@ -23,7 +23,7 @@ p13 = 0.4;
 p20 = 0.9;
 p23 = 0.4;
 p03 = 0.95;
-lambda1;
-lambda2;
+lambda1 = linspace(0,1,11); %Gör så vi kan plotta grejer mot olika lambdavärden
+lambda2 = linspace(0,1,11); %
 lambda0;
 slots = 100000;
