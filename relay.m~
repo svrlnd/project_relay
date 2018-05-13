@@ -35,7 +35,6 @@ timeslots = zeros(10000,1);
 RelayArrivals = zeros(11,11);
 arrivalRateRelay = zeros(11,11);
 Q_array = zeros(11,11);
-Q_prob = zeros(11,11);
 
 
 
@@ -178,7 +177,7 @@ for j = 1:length(lambda1)
                 D = D + 1;
             end
     
-            if (Q1 > 0 && Q0 == 0)
+            if (Q1 == 0 && Q0 == 0)
                 Q_array(j,k) = Q_array(j,k) + 1;
             end
             
@@ -186,15 +185,15 @@ for j = 1:length(lambda1)
         end
         
         arrivalRateRelay(j,k) = RelayArrivals(j,k) / 10000;
-        Q_prob(j,k) = Q_array(j,k) / 10000;
+        Q_prob(j,k) = Q_array(j,k) 
         
         
     end
     
 end
 
-%plotkod(lambda2, arrivalRateRelay)
-plotkod(lambda2, Q_prob)
+plot(lambda2, arrivalRateRelay, '*')
+
 
 
 
@@ -231,13 +230,14 @@ msg0 = q0 * p03;
 
 timeslots = zeros(10000,1);
 
-
+Q1 = 0;
+Q2 = 0;
+Q0 = 0;
+D = 0;
 RelayArrivals = zeros(11,11);
 arrivalRateRelay = zeros(11,11);
-Q_array = zeros(11,11);
-Q_prob = zeros(11,11);
-
-
+RelayFails = 0;
+DestinationFails = 0;
 
 
 for j = 1:length(lambda1)
@@ -378,24 +378,17 @@ for j = 1:length(lambda1)
                 D = D + 1;
             end
     
-            if (Q1 == 0 && Q0 > 0)
-                Q_array(j,k) = Q_array(j,k) + 1;
-            end
-            
-            
+           
         end
         
         arrivalRateRelay(j,k) = RelayArrivals(j,k) / 10000;
-        Q_prob(j,k) = Q_array(j,k) / 10000;
+        
         
         
     end
     
 end
 
-%plotkod(lambda2, arrivalRateRelay)
-plotkod(lambda2, Q_prob)
-
-
+plotkod(lambda2, arrivalRateRelay)
 
 
