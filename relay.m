@@ -178,7 +178,7 @@ for j = 1:length(lambda1)
                 D = D + 1;
             end
     
-            if (Q1 > 0 && Q0 == 0)
+            if (Q0 > 10)
                 Q_array(j,k) = Q_array(j,k) + 1;
             end
             
@@ -378,7 +378,7 @@ for j = 1:length(lambda1)
                 D = D + 1;
             end
     
-            if (Q1 == 0 && Q0 > 0)
+            if (Q0 > 10)
                 Q_array(j,k) = Q_array(j,k) + 1;
             end
             
